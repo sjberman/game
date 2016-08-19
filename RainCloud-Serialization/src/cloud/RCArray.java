@@ -1,6 +1,4 @@
-
-import java.nio.ByteBuffer;
-
+package cloud;
 public class RCArray extends RCBase {
 
 	public static final byte CONTAINER_TYPE = ContainerType.ARRAY;
