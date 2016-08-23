@@ -8,7 +8,7 @@ public class Event {
 
 	private Type type;
 	boolean handled;
-	
+
 	protected Event(Type type) {
 		this.type = type;
 	}

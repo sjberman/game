@@ -46,7 +46,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 	private int[] pixels = ((DataBufferInt) image.getRaster().getDataBuffer()).getData();
 
 	private List<Layer> layerStack = new ArrayList<Layer>();
-	
+
 	public Game() {
 		Dimension size = new Dimension(width * scale + 80 * 3, height * scale);
 		setPreferredSize(size);
@@ -81,7 +81,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public static int getWindowHeight() {
 		return height * scale;
 	}
-	
+
 	public void addLayer(Layer layer) {
 		layerStack.add(layer);
 	}
@@ -129,7 +129,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 		}
 		stop();
 	}
-	
+
 	public void onEvent(Event event) {
 		for (int i = layerStack.size() - 1; i >= 0; i--) {
 			layerStack.get(i).onEvent(event);
@@ -139,7 +139,7 @@ public class Game extends Canvas implements Runnable, EventListener {
 	public void update() {
 		key.update();
 		uiManager.update();
-		
+
 		// update layers here
 		for (int i = 0; i < layerStack.size(); i++) {
 			layerStack.get(i).update();

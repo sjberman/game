@@ -16,11 +16,11 @@ public class ImageUtils {
 		RescaleOp op = new RescaleOp((float) (1 + amt), 0, null);
 		return op.filter(result, null);
 	}
-	
+
 	//do i need to transfer back to indexed?
 	public static BufferedImage toRGB(Image i) {
-	    BufferedImage rgb = new BufferedImage(i.getWidth(null), i.getHeight(null), BufferedImage.TYPE_INT_RGB);
-	    rgb.createGraphics().drawImage(i, 0, 0, null);
-	    return rgb;
+		BufferedImage rgb = new BufferedImage(i.getWidth(null), i.getHeight(null), BufferedImage.TYPE_INT_RGB);
+		rgb.createGraphics().drawImage(i, 0, 0, null);
+		return rgb;
 	}
 }

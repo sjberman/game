@@ -158,13 +158,13 @@ public class Screen {
 				pixels[(xPosition + width) + y * this.width] = color;
 		}
 	}
-	
+
 	public void fillRect(int xPosition, int yPosition, int width, int height, int color, boolean fixed) {
 		if (fixed) {
 			xPosition -= xOffset;
 			yPosition -= yOffset;
 		}
-		
+
 		for (int y = 0; y < height; y++) {
 			int ya = yPosition + y;
 			if (ya < 0 || ya >= this.height)

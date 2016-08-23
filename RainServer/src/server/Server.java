@@ -20,7 +20,7 @@ public class Server {
 
 	private void listen() {
 		while (listening) {
-			
+
 		}
 	}
 

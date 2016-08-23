@@ -21,19 +21,19 @@ public class SpriteSheet {
 	public static SpriteSheet player_down = new SpriteSheet(player, 0, 0, 5, 1, 32);
 	public static SpriteSheet player_left = new SpriteSheet(player, 0, 1, 5, 1, 32);
 	public static SpriteSheet player_right = new SpriteSheet(player, 0, 3, 5, 1, 32);
-	
+
 	public static SpriteSheet dummy = new SpriteSheet("/textures/orc.png", 96, 128);
 	public static SpriteSheet dummy_up = new SpriteSheet(dummy, 0, 0, 3, 1, 32);
 	public static SpriteSheet dummy_down = new SpriteSheet(dummy, 0, 2, 3, 1, 32);
 	public static SpriteSheet dummy_left = new SpriteSheet(dummy, 0, 1, 3, 1, 32);
 	public static SpriteSheet dummy_right = new SpriteSheet(dummy, 0, 3, 3, 1, 32);
-	
+
 	public static SpriteSheet archer = new SpriteSheet("/textures/archer.png", 96, 128);
 	public static SpriteSheet archer_up = new SpriteSheet(archer, 0, 0, 3, 1, 32);
 	public static SpriteSheet archer_down = new SpriteSheet(archer, 0, 2, 3, 1, 32);
 	public static SpriteSheet archer_left = new SpriteSheet(archer, 0, 3, 3, 1, 32);
 	public static SpriteSheet archer_right = new SpriteSheet(archer, 0, 1, 3, 1, 32);
-	
+
 	public static SpriteSheet king = new SpriteSheet("/textures/king.png", 128, 96);
 	public static SpriteSheet king_up = new SpriteSheet(king, 0, 0, 1, 3, 32);
 	public static SpriteSheet king_down = new SpriteSheet(king, 2, 0, 1, 3, 32);

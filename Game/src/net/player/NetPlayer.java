@@ -9,9 +9,9 @@ public class NetPlayer extends Mob {
 		x = 22 * 16;
 		y = 42 * 16;
 	}
-	
+
 	public void update() {
-		
+
 	}
 
 	public void render(Screen screen) {

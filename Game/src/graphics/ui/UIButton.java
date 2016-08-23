@@ -31,14 +31,14 @@ public class UIButton extends UIComponent {
 		label.active = false;
 		init();
 	}
-	
+
 	public UIButton(Vector2i position, BufferedImage image, UIActionListener actionListener) {
 		super(position, new Vector2i(image.getWidth(), image.getHeight()));
 		this.actionListener = actionListener;
 		setImage(image);
 		init();
 	}
-	
+
 	private void init() {
 		setColor(0xAAAAAA);
 		buttonListener = new UIButtonListener();
@@ -102,10 +102,10 @@ public class UIButton extends UIComponent {
 
 	public void render(Graphics g) {
 		int x = position.x + offset.x;
-		int y =  position.y + offset.y;
-		
+		int y = position.y + offset.y;
+
 		if (image != null) {
-			g.drawImage(image, x, y,  null);
+			g.drawImage(image, x, y, null);
 		} else {
 			g.setColor(color);
 			g.fillRect(x, y, size.x, size.y);

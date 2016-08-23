@@ -6,7 +6,7 @@ public class MouseButtonEvent extends Event {
 
 	protected int button;
 	protected int x, y;
-	
+
 	protected MouseButtonEvent(int button, int x, int y, Type type) {
 		super(type);
 		this.button = button;

@@ -49,7 +49,7 @@ public class Player extends Mob implements EventListener {
 	private UIManager ui;
 	private UIProgressBar uiHealthBar;
 	private UIButton button;
-	
+
 	private BufferedImage image;
 
 	/*public Player(String name, Keyboard input) {
@@ -84,10 +84,10 @@ public class Player extends Mob implements EventListener {
 		hpLabel.setColor(0xFFFFFF);
 		hpLabel.setFont(new Font("Verdana", Font.PLAIN, 18));
 		panel.addComponent(hpLabel);
-		
+
 		//Player default attributes
 		health = 100;
-		
+
 		//move buttons somewhere else?? UI class?
 		button = new UIButton(new Vector2i(10, 260), new Vector2i(100, 30), new UIActionListener() {
 			public void perform() {
@@ -97,14 +97,14 @@ public class Player extends Mob implements EventListener {
 		button.setText("Hello");
 		panel.addComponent(button);
 		panel.addComponent(button.label);
-		
+
 		// IMAGE BUTTON
 		try {
 			image = ImageIO.read(new File("res/textures/player.png"));
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-		
+
 		UIButton imageButton = new UIButton(new Vector2i(10, 360), image, new UIActionListener() {
 			public void perform() {
 				System.exit(0);
@@ -118,12 +118,12 @@ public class Player extends Mob implements EventListener {
 			public void exited(UIButton button) {
 				button.setImage(image);
 			}
-			
+
 			public void pressed(UIButton button) {
 				button.setImage(ImageUtils.changeBrightness(image, -50));
 				button.ignoreNextPress();
 			}
-			
+
 			public void released(UIButton button) {
 				button.setImage(image);
 			}
@@ -134,11 +134,11 @@ public class Player extends Mob implements EventListener {
 	public String getName() {
 		return name;
 	}
-	
+
 	public void onEvent(Event event) {
 		EventDispatcher dispatcher = new EventDispatcher(event);
-		dispatcher.dispatch(Event.Type.MOUSE_PRESSED, (Event e) -> onMousePressed((MousePressedEvent)e));
-		dispatcher.dispatch(Event.Type.MOUSE_RELEASED, (Event e) -> onMouseReleased((MouseReleasedEvent)e));
+		dispatcher.dispatch(Event.Type.MOUSE_PRESSED, (Event e) -> onMousePressed((MousePressedEvent) e));
+		dispatcher.dispatch(Event.Type.MOUSE_RELEASED, (Event e) -> onMouseReleased((MouseReleasedEvent) e));
 	}
 
 	public void update() {
@@ -174,34 +174,34 @@ public class Player extends Mob implements EventListener {
 			walking = true;
 		} else
 			walking = false;
-		
+
 		updateShooting();
 
 		uiHealthBar.setProgress(health / 100.0);
 	}
-	
+
 	private void updateShooting() {
 		if (!shooting || fireRate > 0)
 			return;
-					
+
 		double dx = Mouse.getX() - Game.getWindowWidth() / 2;
 		double dy = Mouse.getY() - Game.getWindowHeight() / 2;
 		double dir = Math.atan2(dy, dx);
 		shoot(x, y, dir);
 		fireRate = WizardProjectile.FIRE_RATE;
 	}
-	
+
 	public boolean onMousePressed(MousePressedEvent e) {
-		if(e.getX() > 660)
+		if (e.getX() > 660)
 			return false;
-		
+
 		if (e.getButton() == MouseEvent.BUTTON1) {
 			shooting = true;
 			return true;
 		}
 		return false;
 	}
-	
+
 	public boolean onMouseReleased(MouseReleasedEvent e) {
 		if (e.getButton() == MouseEvent.BUTTON1) {
 			shooting = false;

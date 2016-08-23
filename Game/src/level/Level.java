@@ -23,7 +23,7 @@ public class Level extends Layer {
 	protected int[] tilesInt;
 	protected int[] tiles;
 	protected int tile_size;
-	
+
 	private int xScroll, yScroll;
 
 	private List<Entity> entities = new ArrayList<Entity>();
@@ -85,7 +85,7 @@ public class Level extends Layer {
 				players.remove(i);
 		}
 	}
-	
+
 	public void onEvent(Event event) {
 		getClientPlayer().onEvent(event);
 	}
@@ -110,7 +110,7 @@ public class Level extends Layer {
 		}
 		return solid;
 	}
-	
+
 	public void setScroll(int xScroll, int yScroll) {
 		this.xScroll = xScroll;
 		this.yScroll = yScroll;
@@ -161,7 +161,7 @@ public class Level extends Layer {
 			entities.add(e);
 		}
 	}
-	
+
 	//don't think this is necessary
 	public void addPlayer(Mob player) {
 		player.init(this);
